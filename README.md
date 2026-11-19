@@ -22,7 +22,6 @@ A Telegram bot built with n8n that uses the FortyGuard Temperature API to analyz
 
 ## 🔄 Workflow
 
-```text
 Telegram Trigger
 → AI Agent: extracts the requested date and time range
 → HTTP Request: submits a FortyGuard heatmap request
@@ -31,18 +30,21 @@ Telegram Trigger
 → Telegram: sends the response
 
 ## ⚠️ Current Limitations
+
 - The heatmap area is hard-coded to a small test area in Miami.
 - Requests mentioning other locations still receive data for the Miami test area.
 - The result summarizes the requested area and time range; it does not necessarily provide hourly readings.
 - Suggestions are based on the available temperature data only. The workflow does not assess rain, wind, or other conditions.
 - Support for other locations and geocoding is not implemented yet.
+
 ## 🚀 Setup
 1. Download fortygaurd-project-public.json from this repository.
 2. Import the workflow into n8n.
 3. Configure your own Telegram, OpenRouter, and FortyGuard credentials in n8n.
 4. Review the fixed Miami test polygon and request settings.
 5. Test the workflow with a Telegram message.
-Never commit API keys, bot tokens, or exported credentials. Add credentials through n8n after importing the workflow.
+6. Never commit API keys, bot tokens, or exported credentials. Add credentials through n8n after importing the workflow.
+
 ## 🗺️ Planned Improvements
 - Add US location lookup and validation.
 - Generate the heatmap area from the resolved location.
